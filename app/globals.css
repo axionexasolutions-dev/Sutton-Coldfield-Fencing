@@ -1,26 +1,151 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --font-heading: var(--font-serif);
+    --font-serif: var(--font-serif);
+    --font-sans: var(--font-sans);
+    --color-forest: var(--forest-green);
+    --color-forest-green: var(--forest-green);
+    --color-lime: var(--lime-green);
+    --color-lime-green: var(--lime-green);
+    --color-warm-white: var(--warm-white);
+    --color-primary-text: var(--primary-text);
+    --color-secondary-text: var(--secondary-text);
+    --color-brand-border: var(--border-warm);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+    /* Sutton Coldfield Fencing - Core Brand Palette */
+    --forest-green: #163D2A;
+    --lime-green: #B9ED63;
+    --warm-white: #F4F3EC;
+    --primary-text: #1C2921;
+    --secondary-text: #68736A;
+    --border-warm: #DDE2D7;
+    --white: #FFFFFF;
+
+    /* Semantic Theme Tokens */
+    --background: #F4F3EC;
+    --foreground: #1C2921;
+    --card: #FFFFFF;
+    --card-foreground: #1C2921;
+    --popover: #FFFFFF;
+    --popover-foreground: #1C2921;
+    --primary: #163D2A;
+    --primary-foreground: #FFFFFF;
+    --secondary: #E5EADF;
+    --secondary-foreground: #163D2A;
+    --muted: #E8ECE3;
+    --muted-foreground: #68736A;
+    --accent: #B9ED63;
+    --accent-foreground: #163D2A;
+    --destructive: #BE3838;
+    --destructive-foreground: #FFFFFF;
+    --border: #DDE2D7;
+    --input: #DDE2D7;
+    --ring: #163D2A;
+    --chart-1: #163D2A;
+    --chart-2: #B9ED63;
+    --chart-3: #2C6346;
+    --chart-4: #8DB843;
+    --chart-5: #68736A;
+    --radius: 0.625rem;
+    --sidebar: #FFFFFF;
+    --sidebar-foreground: #1C2921;
+    --sidebar-primary: #163D2A;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #F4F3EC;
+    --sidebar-accent-foreground: #163D2A;
+    --sidebar-border: #DDE2D7;
+    --sidebar-ring: #163D2A;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.dark {
+    --background: #0E1B13;
+    --foreground: #F4F3EC;
+    --card: #14261B;
+    --card-foreground: #F4F3EC;
+    --popover: #14261B;
+    --popover-foreground: #F4F3EC;
+    --primary: #B9ED63;
+    --primary-foreground: #0E1B13;
+    --secondary: #1F3829;
+    --secondary-foreground: #F4F3EC;
+    --muted: #1B3124;
+    --muted-foreground: #9AA79C;
+    --accent: #1F3829;
+    --accent-foreground: #B9ED63;
+    --destructive: #E05353;
+    --destructive-foreground: #FFFFFF;
+    --border: #23402E;
+    --input: #23402E;
+    --ring: #B9ED63;
+    --chart-1: #B9ED63;
+    --chart-2: #347A53;
+    --chart-3: #52B788;
+    --chart-4: #A7C957;
+    --chart-5: #9AA79C;
+    --sidebar: #14261B;
+    --sidebar-foreground: #F4F3EC;
+    --sidebar-primary: #B9ED63;
+    --sidebar-primary-foreground: #0E1B13;
+    --sidebar-accent: #1F3829;
+    --sidebar-accent-foreground: #B9ED63;
+    --sidebar-border: #23402E;
+    --sidebar-ring: #B9ED63;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans;
+    }
 }
