@@ -24,7 +24,11 @@ const OUR_SERVICES = [
 ]
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
+  const [currentYear, setCurrentYear] = React.useState<number>(2026)
+
+  React.useEffect(() => {
+    setCurrentYear(new Date().getFullYear())
+  }, [])
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
