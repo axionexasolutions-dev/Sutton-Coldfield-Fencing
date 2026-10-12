@@ -122,18 +122,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile Navigation via Sheet */}
-          <div className="flex md:hidden items-center gap-2">
-            <Link
-              href="#quote"
-              className={cn(
-                buttonVariants({ size: "sm" }),
-                "h-8.5 px-3 rounded-full bg-[#B9ED63] hover:bg-[#cbf487] text-[#163D2A] font-semibold text-xs border border-[#B9ED63]/40 flex items-center gap-1 cursor-pointer"
-              )}
-            >
-              <span>Quote</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#163D2A]" />
-            </Link>
-
+          <div className="flex md:hidden items-center">
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger
                 aria-label="Open mobile navigation menu"
